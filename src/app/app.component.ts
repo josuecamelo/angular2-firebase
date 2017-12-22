@@ -34,6 +34,15 @@ export class AppComponent {
     });
   }
 
+  login() {
+    //this.af.auth.login();
+    console.log('login')
+  }
+
+  logout() {
+    this.af.auth.logout();
+  }
+
   update(key :string) {
     let obj = this.af.database.object('/courses/' + key);
 

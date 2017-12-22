@@ -33,6 +33,13 @@ var AppComponent = (function () {
             _this.user = user;
         });
     };
+    AppComponent.prototype.login = function () {
+        //this.af.auth.login();
+        console.log('login');
+    };
+    AppComponent.prototype.logout = function () {
+        this.af.auth.logout();
+    };
     AppComponent.prototype.update = function (key) {
         var _this = this;
         var obj = this.af.database.object('/courses/' + key);
