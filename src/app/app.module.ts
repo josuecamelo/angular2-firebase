@@ -1,19 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
-/*const firebaseConfig = {
-  apiKey: "AIzaSyAnDUkWLAOANoDbghYEjCHLvSGwLZ6lrvo",
-  authDomain: "voting-son-1c844.firebaseapp.com",
-  databaseURL: "https://voting-son-1c844.firebaseio.com",
-  storageBucket: "voting-son-1c844.appspot.com",
-  messagingSenderId: "389585160087"
-};*/
 
-const myFirebaseAuthConfig = {
-  provider: AuthProviders.Github,
-  method: AuthMethods.Popup
+const firebaseConfig = {
+  apiKey: "AIzaSyC6vTKvJfWbYFPWFsF-5cN0UNDzQqxlV7E",
+  authDomain: "angular-crud1.firebaseapp.com",
+  databaseURL: "https://angular-crud1.firebaseio.com",
+  projectId: "angular-crud1",
+  storageBucket: "angular-crud1.appspot.com",
+  messagingSenderId: "953415941333"
 };
 
 @NgModule({
