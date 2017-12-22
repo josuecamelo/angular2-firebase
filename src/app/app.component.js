@@ -44,12 +44,12 @@ var AppComponent = (function () {
         var obj = this.af.database.object('/courses/' + key);
         obj.$ref.transaction(function (item) {
             var emails = item.users || [];
-            /*if (emails.indexOf(this.user.auth.email) >= 0) {
-              return;
-            }*/
+            if (emails.indexOf(_this.user.auth.email) >= 0) {
+                return;
+            }
             var total = item.votes || 0;
             total++;
-            //emails.push(this.user.auth.email);
+            emails.push(_this.user.auth.email);
             _this.items.update(key, { votes: total, users: emails });
         });
     };

@@ -47,13 +47,17 @@ export class AppComponent {
 
     obj.$ref.transaction(item => {
       let emails = item.users || [];
-      /*if (emails.indexOf(this.user.auth.email) >= 0) {
+
+      if (emails.indexOf(this.user.auth.email) >= 0) {
         return;
-      }*/
+      }
 
       let total: number = item.votes || 0;
+
       total ++;
-      //emails.push(this.user.auth.email);
+
+      emails.push(this.user.auth.email);
+
       this.items.update(key, {votes: total, users: emails})
     })
   }
