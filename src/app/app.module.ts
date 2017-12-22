@@ -3,13 +3,13 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
-const firebaseConfig = {
+/*const firebaseConfig = {
   apiKey: "AIzaSyAnDUkWLAOANoDbghYEjCHLvSGwLZ6lrvo",
   authDomain: "voting-son-1c844.firebaseapp.com",
   databaseURL: "https://voting-son-1c844.firebaseio.com",
   storageBucket: "voting-son-1c844.appspot.com",
   messagingSenderId: "389585160087"
-};
+};*/
 
 const myFirebaseAuthConfig = {
   provider: AuthProviders.Github,
@@ -18,8 +18,7 @@ const myFirebaseAuthConfig = {
 
 @NgModule({
   imports: [
-    BrowserModule,
-    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
+    BrowserModule
   ],
   declarations: [
     AppComponent
