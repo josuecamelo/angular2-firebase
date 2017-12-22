@@ -61,4 +61,33 @@ export class AppComponent {
       this.items.update(key, {votes: total, users: emails})
     })
   }
+
+  create(e: any, value: string) {
+    e.preventDefault();
+    let emails = [
+      this.user.auth.email
+    ];
+    let data = {
+      title: value,
+      color: this.getColor(),
+      users: emails,
+      votes: 1
+    };
+    this.items.push(data);
+  }
+
+  private getColor() {
+    let colors = [
+      'mdl-color--red',
+      'mdl-color--blue',
+      'mdl-color--green',
+      'mdl-color--yellow',
+      'mdl-color--orange',
+      'mdl-color--lime',
+      'mdl-color--indigo',
+      'mdl-color--pink',
+      'mdl-color--purple',
+    ];
+    return colors[Math.floor(Math.random()*colors.length)];
+  }
 }

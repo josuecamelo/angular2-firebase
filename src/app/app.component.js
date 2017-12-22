@@ -53,6 +53,33 @@ var AppComponent = (function () {
             _this.items.update(key, { votes: total, users: emails });
         });
     };
+    AppComponent.prototype.create = function (e, value) {
+        e.preventDefault();
+        var emails = [
+            this.user.auth.email
+        ];
+        var data = {
+            title: value,
+            color: this.getColor(),
+            users: emails,
+            votes: 1
+        };
+        this.items.push(data);
+    };
+    AppComponent.prototype.getColor = function () {
+        var colors = [
+            'mdl-color--red',
+            'mdl-color--blue',
+            'mdl-color--green',
+            'mdl-color--yellow',
+            'mdl-color--orange',
+            'mdl-color--lime',
+            'mdl-color--indigo',
+            'mdl-color--pink',
+            'mdl-color--purple',
+        ];
+        return colors[Math.floor(Math.random() * colors.length)];
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
