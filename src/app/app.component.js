@@ -66,6 +66,9 @@ var AppComponent = (function () {
         };
         this.items.push(data);
     };
+    AppComponent.prototype.remove = function (key) {
+        this.items.remove(key);
+    };
     AppComponent.prototype.getColor = function () {
         var colors = [
             'mdl-color--red',

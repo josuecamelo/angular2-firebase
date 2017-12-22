@@ -76,6 +76,11 @@ export class AppComponent {
     this.items.push(data);
   }
 
+  remove(key :string) {
+    this.items.remove(key);
+  }
+
+
   private getColor() {
     let colors = [
       'mdl-color--red',
