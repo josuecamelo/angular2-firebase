@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 const firebaseConfig = {
   apiKey: "AIzaSyC6vTKvJfWbYFPWFsF-5cN0UNDzQqxlV7E",
@@ -12,9 +12,15 @@ const firebaseConfig = {
   messagingSenderId: "953415941333"
 };
 
+const myFirebaseAuthConfig = {
+  provider: AuthProviders.Github,
+  method: AuthMethods.Popup
+};
+
 @NgModule({
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
   declarations: [
     AppComponent

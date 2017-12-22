@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
+var angularfire2_1 = require('angularfire2');
 var firebaseConfig = {
     apiKey: "AIzaSyC6vTKvJfWbYFPWFsF-5cN0UNDzQqxlV7E",
     authDomain: "angular-crud1.firebaseapp.com",
@@ -19,13 +20,18 @@ var firebaseConfig = {
     storageBucket: "angular-crud1.appspot.com",
     messagingSenderId: "953415941333"
 };
+var myFirebaseAuthConfig = {
+    provider: angularfire2_1.AuthProviders.Github,
+    method: angularfire2_1.AuthMethods.Popup
+};
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [
-                platform_browser_1.BrowserModule
+                platform_browser_1.BrowserModule,
+                angularfire2_1.AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
             ],
             declarations: [
                 app_component_1.AppComponent
