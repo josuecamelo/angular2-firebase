@@ -10,7 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var angularfire2_1 = require('angularfire2');
+require('material-design-lite/material.min');
 require('../../public/css/styles.css');
+require('../../public/css/material.green-amber.min.css');
 var AppComponent = (function () {
     function AppComponent(af) {
         this.af = af;

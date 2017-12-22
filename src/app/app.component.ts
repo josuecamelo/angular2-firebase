@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { AngularFire, FirebaseListObservable} from 'angularfire2';
 
+import 'material-design-lite/material.min';
 import '../../public/css/styles.css';
+import '../../public/css/material.green-amber.min.css';
 
 @Component({
   selector: 'my-app',
