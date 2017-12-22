@@ -35,8 +35,7 @@ export class AppComponent {
   }
 
   login() {
-    //this.af.auth.login();
-    console.log('login')
+    this.af.auth.login();
   }
 
   logout() {

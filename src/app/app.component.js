@@ -34,8 +34,7 @@ var AppComponent = (function () {
         });
     };
     AppComponent.prototype.login = function () {
-        //this.af.auth.login();
-        console.log('login');
+        this.af.auth.login();
     };
     AppComponent.prototype.logout = function () {
         this.af.auth.logout();
