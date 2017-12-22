@@ -33,4 +33,8 @@ export class AppComponent {
       this.user = user;
     });
   }
+
+  update(key :string) {
+    console.log(key);
+  }
 }

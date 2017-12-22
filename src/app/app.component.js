@@ -33,6 +33,9 @@ var AppComponent = (function () {
             _this.user = user;
         });
     };
+    AppComponent.prototype.update = function (key) {
+        console.log(key);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
