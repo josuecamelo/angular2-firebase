@@ -34,7 +34,18 @@ var AppComponent = (function () {
         });
     };
     AppComponent.prototype.update = function (key) {
-        console.log(key);
+        var _this = this;
+        var obj = this.af.database.object('/courses/' + key);
+        obj.$ref.transaction(function (item) {
+            var emails = item.users || [];
+            /*if (emails.indexOf(this.user.auth.email) >= 0) {
+              return;
+            }*/
+            var total = item.votes || 0;
+            total++;
+            //emails.push(this.user.auth.email);
+            _this.items.update(key, { votes: total, users: emails });
+        });
     };
     AppComponent = __decorate([
         core_1.Component({

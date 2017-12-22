@@ -35,6 +35,18 @@ export class AppComponent {
   }
 
   update(key :string) {
-    console.log(key);
+    let obj = this.af.database.object('/courses/' + key);
+
+    obj.$ref.transaction(item => {
+      let emails = item.users || [];
+      /*if (emails.indexOf(this.user.auth.email) >= 0) {
+        return;
+      }*/
+
+      let total: number = item.votes || 0;
+      total ++;
+      //emails.push(this.user.auth.email);
+      this.items.update(key, {votes: total, users: emails})
+    })
   }
 }
